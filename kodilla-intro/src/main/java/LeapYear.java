@@ -10,7 +10,7 @@ public class LeapYear {
         if (year % 4 == 0) {
 
             // jeżeli jest podzielny przez 100
-
+            if (year % 100 == 0) {
             // jeżeli rok jest podzielny przez 400 jest przestępny
             // else - jeżeli nie jest - jest nieprzprzestępny
             if (year % 400 == 0)
@@ -25,10 +25,12 @@ public class LeapYear {
     }
 
         else
-    leap = false;
+            leap = false;
 
         if (leap)
             System.out.println(year + " jest przestępny.");
         else
-                System.out.println(year + " jest nieprzestępny.");
+            System.out.println(year + " jest nieprzestępny.");
 }
+}
+
