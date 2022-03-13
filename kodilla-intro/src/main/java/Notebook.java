@@ -12,24 +12,24 @@ public class Notebook {
         if (this.price <= 600) {
             System.out.println("This notebook is very cheap.");
         }
-       else if (this.price >= 601 && this.price <= 1000) { // przedział od 600 do 1000
+        else if (this.price >= 601 && this.price <= 1000) { // przedział od 600 do 1000
             System.out.println("This price is good");
         }
 
-        else if (this.price <= 1001 || this.price <= 1000000 ) { // //tutaj funkcja nie działa do końca dobrze
+        else if (this.price >= 1001  ) { // powyzej 1000
             System.out.println("This price is expensive");
         }
 
     }
 
     public void checkWeight() {
-        if (this.weight >= 1601 || this.weight >= 2000) {
+        if (this.weight >= 1601) { //powyzej 1600
             System.out.println("Urządzenie jest cięzkie");
         }
-        else if (this.weight >= 601 || this.weight >= 1600) {
+        else if (this.weight >= 601 && this.weight <= 1600) { // od 601 do 1600
             System.out.println("Urządzenie jest niezbyt cięzkie");
         }
-        else if (this.weight >= 1 || this.weight >= 600) {
+        else if (this.weight > 0 && this.weight <= 600) { // od 0 do 600
             System.out.println("Urządzenie jest lekkie");
         } else if  (this.weight == 0) {
             System.out.println("Wybierz wagę powyżej zera");
@@ -52,7 +52,4 @@ public class Notebook {
 
 
 
-    }
-
-
-
+}
