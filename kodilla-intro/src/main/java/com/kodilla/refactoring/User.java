@@ -1,4 +1,4 @@
-package refactoring;
+package com.kodilla.refactoring;
 
 public class User {
 

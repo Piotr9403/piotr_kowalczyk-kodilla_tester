@@ -1,7 +1,4 @@
-package refactoring;
-
-import static refactoring.User.age;
-import static refactoring.User.height;
+package com.kodilla.refactoring;
 
 public class Application {
     public static void main(String[] args){
