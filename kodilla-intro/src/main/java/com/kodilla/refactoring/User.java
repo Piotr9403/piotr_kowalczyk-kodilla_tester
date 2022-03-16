@@ -21,4 +21,16 @@ public class User {
             }
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getAge() {
+        return age;
+    }
+
+    public double getHeight() {
+        return height;
+    }
 }
