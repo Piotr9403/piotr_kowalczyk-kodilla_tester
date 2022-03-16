@@ -1,3 +1,5 @@
+import javax.naming.Name;
+
 public class Zmienne {
     public static void main(String[] args) {
         String myName = "Hello from FirstClass!";
@@ -8,4 +10,6 @@ public class Zmienne {
         System.out.println(myAge);
         System.out.println(myName);
     }
+
+
 }
