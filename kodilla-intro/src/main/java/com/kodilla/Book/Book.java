@@ -1,6 +1,6 @@
 package com.kodilla.Book;
 
-public class Book {
+public class Book<toString> {
     //Pola
     private String author;
     private String title;
@@ -16,10 +16,7 @@ public class Book {
         Book book = new Book(author, title);                //utworzenie obiektu book
         return book;                                        //zwrócenie obiektu book
     }
-
-    public static void main(String[] args) {
-        Book book = Book.of("Isaac Asimov", "The Galaxy");// Inicjalizacja zmiennej Book za pomoca metody of
-        System.out.println(("Autor: " + book.author + " " + "Tytuł: " + book.title));
-
+    public String toString() {
+        return author + ", " + title;
     }
 }
