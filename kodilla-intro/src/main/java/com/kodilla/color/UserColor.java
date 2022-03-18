@@ -1,11 +1,11 @@
 import com.kodilla.color.UserColorApp;
-import java.util.Scanner;
 
-public class UserColor
-{
+public class UserColor {
     public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        System.out.println(UserColorApp);
+        UserColorApp userApp = new UserColorApp();      //instacja klasy
+        userApp.getUserWord();                          //wprowadza litere z klasy wpisaną z konsoli getUserWord
+
+        System.out.println(userApp);                    //wyświetla strumień zadekarowany do danej litery ze switch(choice)
 
     }
 }
