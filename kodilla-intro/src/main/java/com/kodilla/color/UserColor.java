@@ -1,7 +1,4 @@
-/*
 import com.kodilla.color.UserColorApp;
-
-
 import java.util.Scanner;
 
 public class UserColor
@@ -12,4 +9,3 @@ public class UserColor
 
     }
 }
-*/
