@@ -6,7 +6,7 @@ public class UserColorApp {
 
     public static void getUserWord() {
         Scanner scanner = new Scanner(System.in);
-       while (true) {                                   //pętla będzie powtarzała wybór pierwszej litery
+        while (true) {                                   //pętla będzie powtarzała wybór pierwszej litery
             System.out.println("Wybierz litere: I , B , G , Y , O , R");
             char choice = scanner.next().charAt(0);
             switch (choice) {
@@ -45,7 +45,6 @@ public class UserColorApp {
         }
     }
 
-
     public class UserDialogs {
         public static String getWord() {
             Scanner scanner = new Scanner(System.in);
@@ -58,8 +57,5 @@ public class UserColorApp {
                 System.out.println("Wrong word ");
             }
         }
-
-
-
     }
 }
