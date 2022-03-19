@@ -1,11 +1,15 @@
 import com.kodilla.color.UserColorApp;
-import com.kodilla.variables.UserDialogs;
+import com.kodilla.petle.User;
 
 public class UserColor {
     public static void main(String args[]) {
-        UserColorApp userApp = new UserColorApp();      //instacja klasy
-        userApp.getUserWord();                       //wprowadza litere z klasy wpisaną z konsoli getUserWord
+        //gdy nie ma static method trzeba zadaklarowac klase
+        //UserColorApp userApp = new UserColorApp();      //instacja klasy
+        //userApp.getUserWord();                       //wprowadza litere z klasy wpisaną z konsoli getUserWord
 
-        System.out.println(userApp);                    //wyświetla strumień zadekarowany do danej litery ze switch(choice)
+        //dzieki static method mozna uzyc metody z klasy
+        UserColorApp.getUserWord();
+        //System.out.println(userApp);        // wyświetla strumień zadekarowany do danej litery ze switch(choice)
+
     }
 }
