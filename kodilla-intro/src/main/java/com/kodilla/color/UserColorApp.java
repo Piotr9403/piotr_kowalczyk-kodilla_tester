@@ -5,36 +5,34 @@ import java.util.Scanner;
 public class UserColorApp {
 
     public static void getUserWord() {
-        Scanner scanner = new Scanner(System.in);
         while (true) {                                   //pętla będzie powtarzała wybór pierwszej litery
-            System.out.println("Wybierz litere: I , B , G , Y , O , R");
-            char choice = scanner.next().charAt(0);
+            String choice = UserDialogs.getWord();
             switch (choice) {
-                case 'V':
+                case "V":
                     System.out.println("Violet");
                     break;
 
-                case 'I':
+                case "I":
                     System.out.println("Indigo");
                     break;
 
-                case 'B':
+                case "B":
                     System.out.println("Blue");
                     break;
 
-                case 'G':
+                case "G":
                     System.out.println("Green");
                     break;
 
-                case 'Y':
+                case "Y":
                     System.out.println("Yellow");
                     break;
 
-                case 'O':
+                case "O":
                     System.out.println("Orange");
                     break;
 
-                case 'R':
+                case "R":
                     System.out.println("Red");
                     break;
 
@@ -43,18 +41,18 @@ public class UserColorApp {
                     System.out.println("Wybierz literę z przedziału");
             }
         }
+
     }
 
     public class UserDialogs {
         public static String getWord() {
-            Scanner scanner = new Scanner(System.in);
             while (true) {
-                System.out.println("Enter first word ");
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Wybierz litere: I , B , G , Y , O , R");
                 String word = scanner.nextLine().trim();
                 if (word.length() >= 1) {
                     return word;
                 }
-                System.out.println("Wrong word ");
             }
         }
     }
