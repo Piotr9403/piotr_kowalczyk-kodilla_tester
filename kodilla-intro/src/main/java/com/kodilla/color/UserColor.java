@@ -1,3 +1,5 @@
+package com.kodilla.color;
+
 import com.kodilla.color.UserColorApp;
 import com.kodilla.petle.User;
 
