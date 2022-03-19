@@ -5,6 +5,7 @@ public class App {
         //OperatingSystem
         OperatingSystem system = new OperatingSystem(1990);
         System.out.println(system.getPublishYear()); // wywowłanie gettera
+
         //Linux extends OperatingSystem
         Linux linux = new Linux(2000);
         System.out.println(linux.getPublishYear()); // wywołanie gettera z OperatingSystem
