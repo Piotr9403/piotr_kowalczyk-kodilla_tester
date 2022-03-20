@@ -1,13 +1,17 @@
 package com.kodilla.abstracts.homework;
 
-public class Job {
+public abstract class Job {
 
-   private String salary;
-   private String resposibilites;
+    private double salary;
+    private String resposibilites;
 
-   public Job(String salary, String responsibilites) {
-      this.salary = salary;
-      this.resposibilites = responsibilites;
+    public Job(double salary, String resposibilites) {
+        this.salary = salary;
+        this.resposibilites = resposibilites;
+    }
 
-   }
+    @Override
+    public String toString() {
+        return "{" + "salary= " + salary + " pln" + ", resposibilites=" + resposibilites + '\'' + '}';
+    }
 }

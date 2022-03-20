@@ -1,15 +1,13 @@
 package com.kodilla.abstracts.homework;
 
-public class PoliceJob extends Job{
+public class PoliceJob extends Job {
 
-    private String responsibilites = "Mandaty, itp";
-
-    private String salary ="fdgdf";
-
-    public opis1(String salary , String responsibilites) {
-        return responsibilites, salary;
-
-        System.out.println("Convertible constructor");
+    public PoliceJob(double salary, String resposibilites) {
+        super(salary, resposibilites);
     }
 
+    @Override
+    public String toString() {
+        return "Policeman" + super.toString();
+    }
 }
