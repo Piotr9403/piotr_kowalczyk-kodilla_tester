@@ -13,7 +13,6 @@ public class Ford implements Car {
 
     }
 
-
     @Override
     public int getSpeed() {
         return speed + increaseSpeed - decreaseSpeed;
