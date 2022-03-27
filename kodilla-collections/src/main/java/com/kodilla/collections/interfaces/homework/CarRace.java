@@ -10,8 +10,7 @@ public class CarRace {
 
     }
     private static void doRace(Car car) {
-        System.out.println("Prędkość początkowa: " + car.getSpeed());
-        System.out.println("Prędkość zwiększająca: " + car.increaseSpeed());
-        System.out.println("Prędkość zmniejszająca: " +car.decreaseSpeed());
+        System.out.println(car.getSpeed());
+
     }
 }
