@@ -11,6 +11,8 @@ public class CarRace {
     }
     private static void doRace(Car car) {
         System.out.println(car.getSpeed());
+        System.out.println(car.increaseSpeed);
+        System.out.println(car.decreaseSpeed);
 
     }
 }
