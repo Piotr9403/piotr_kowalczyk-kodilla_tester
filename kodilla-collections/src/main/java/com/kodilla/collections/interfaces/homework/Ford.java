@@ -25,7 +25,11 @@ public class Ford implements Car {
 
     @Override
     public void decreaseSpeed() {
-        speed = speed + 2 * decreaseSpeed;
+        speed = speed - 2 * decreaseSpeed;
+        if(speed < 0){
+            speed = 0;
+        }
 
     }
+
 }

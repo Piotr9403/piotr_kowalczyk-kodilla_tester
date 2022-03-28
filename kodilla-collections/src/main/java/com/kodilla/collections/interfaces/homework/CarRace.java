@@ -5,7 +5,7 @@ public class CarRace {
         Ford ford = new Ford(0, 50, 20);
         doRace(ford);
 
-        Opel opel = new Opel(0, 50, 40);
+        Opel opel = new Opel(0, 60, 40);
         doRace(opel);
 
     }
