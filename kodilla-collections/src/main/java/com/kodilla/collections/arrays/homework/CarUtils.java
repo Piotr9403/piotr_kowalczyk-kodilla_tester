@@ -8,11 +8,14 @@ import com.kodilla.collections.interfaces.homework.Opel;
 public class CarUtils {
 
     public static void describeCar(Car car) {
+
         System.out.println("-----------------------------");
         System.out.println("Car kind: " + getCarName(car));
-        System.out.println("Increase speed: " + car.getSpeed());
-        System.out.println("Car increased speed: " + car.increaseSpeed());
-        System.out.println("Car decrease speed: " + car.decreaseSpeed());
+        System.out.println("Car speed speed: " + car.getSpeed());
+        car.increaseSpeed();
+        System.out.println("Car increased speed: " + car.getSpeed());
+        car.decreaseSpeed();
+        System.out.println("Car decrease speed: " + car.getSpeed());
 
     }
 
@@ -21,9 +24,8 @@ public class CarUtils {
             return "Ford";
         else if (car instanceof Opel)
             return "Opel";
-//        else if (car instanceof Square)
-//            return "Square";
         else
             return "Unknown car name";
     }
+
 }

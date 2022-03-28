@@ -7,6 +7,7 @@ import com.kodilla.collections.interfaces.homework.Opel;
 import java.util.Random;
 
 public class CarsApplication {
+
     public static void main(String[] args) {
         Random random = new Random();
         Car[] cars = new Car[random.nextInt(15) + 1];
@@ -19,16 +20,15 @@ public class CarsApplication {
     private static Car drawCars() {
         Random random = new Random();
         // draw a kind of the car
-        int drawnCarKind = random.nextInt(3);     // possible values: 0, 1, 2
-        int a = random.nextInt();
-        int b = random.nextInt();
+        int drawnCarKind = random.nextInt(2);     // possible values: 0, 1
+        int getSpeed = random.nextInt(10);
+        int increaseSpeed = random.nextInt(100);
+        int decreaseSpeed = random.nextInt(50);
         if (drawnCarKind == 0)
-            return new Opel(10, 20, 30);
+            return new Opel(getSpeed , decreaseSpeed, increaseSpeed);
         else if (drawnCarKind == 1)
-            return new Ford(30, 40, 50);
+            return new Ford(getSpeed , increaseSpeed , decreaseSpeed);
         return null;
-//            else
-//                return new Triangle(a, b, c);
-
     }
+
 }
