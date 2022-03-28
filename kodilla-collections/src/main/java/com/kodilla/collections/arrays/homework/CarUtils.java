@@ -1,3 +1,4 @@
+
 package com.kodilla.collections.arrays.homework;
 
 import com.kodilla.collections.interfaces.homework.Car;
@@ -11,6 +12,8 @@ public class CarUtils {
         System.out.println("Car kind: " + getCarName(car));
         System.out.println("Increase speed: " + car.getSpeed());
         System.out.println("Car increased speed: " + car.increaseSpeed());
+        System.out.println("Car decrease speed: " + car.decreaseSpeed());
+
     }
 
     private static String getCarName(Car car) {
@@ -23,6 +26,4 @@ public class CarUtils {
         else
             return "Unknown car name";
     }
-
-
 }
