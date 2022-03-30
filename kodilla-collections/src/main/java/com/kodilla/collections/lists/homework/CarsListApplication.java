@@ -13,9 +13,9 @@ public class CarsListApplication {
         List<Car> cars = new ArrayList<>();
 
         System.out.println("-----------------------------");
-        Ford ford = new Ford(10,30,15);
+        Ford ford = new Ford(10, 30, 15);
         cars.add(ford);
-        cars.add(new Opel(5,50,20));
+        cars.add(new Opel(5, 50, 20));
         System.out.println("Początkowy rozmiar kolekcji: " + cars.size() + ".");
 
         for (Car car : cars) {
