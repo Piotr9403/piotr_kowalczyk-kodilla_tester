@@ -28,7 +28,5 @@ public class CarsListApplication {
         cars.remove(ford);
         System.out.println("Rozmiar kolekcji wynosi: " + cars.size() + ".");
 
-        for (Car car : cars)
-            CarUtils.describeCar(car);
     }
 }
