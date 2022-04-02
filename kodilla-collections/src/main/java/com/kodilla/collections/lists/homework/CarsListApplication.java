@@ -15,7 +15,8 @@ public class CarsListApplication {
         System.out.println("-----------------------------");
         Ford ford = new Ford(10, 30, 15);
         cars.add(ford);
-        cars.add(new Opel(5, 50, 20));
+        Opel opel1 = new Opel(5, 50, 20);
+        cars.add(opel1);
         System.out.println("Początkowy rozmiar kolekcji: " + cars.size() + ".");
 
         for (Car car : cars) {
@@ -23,7 +24,10 @@ public class CarsListApplication {
         }
 
         System.out.println("-----------------------------");
-        cars.remove(1);
+        //cars.remove(1);
+        Opel opel = new Opel(115, 50, 20);
+        System.out.println(opel.equals(opel1));
+        cars.remove(opel);
         System.out.println("Rozmiar kolekcji wynosi: " + cars.size() + ".");
         cars.remove(ford);
         System.out.println("Rozmiar kolekcji wynosi: " + cars.size() + ".");
