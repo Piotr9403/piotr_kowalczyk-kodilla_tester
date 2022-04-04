@@ -1,3 +1,4 @@
+/*
 package com.kodilla.collections.adv.immutable;
 
 public class ImmutableExample {
@@ -9,3 +10,4 @@ public class ImmutableExample {
 
     }
 }
+*/

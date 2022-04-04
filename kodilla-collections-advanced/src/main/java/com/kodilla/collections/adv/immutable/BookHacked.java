@@ -1,3 +1,4 @@
+/*
 package com.kodilla.collections.adv.immutable;
 
 class BookHacked extends Book {
@@ -17,3 +18,5 @@ class BookHacked extends Book {
         return realTitle;
     }
 }
+
+ */
