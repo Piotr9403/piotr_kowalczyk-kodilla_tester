@@ -1,3 +1,4 @@
+/*
 package com.kodilla.collections.adv.immutable.homework;
 
 public final class Task {
@@ -7,7 +8,7 @@ public final class Task {
 
     public Task(String title, int duration) {
         this.title = title;
-        this.int =duration;
+        this.int = duration;
     }
 
     public final String getTitle() {
@@ -18,3 +19,4 @@ public final class Task {
         return duration;
     }
 }
+ */
