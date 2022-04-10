@@ -12,12 +12,7 @@ public class TaskManager {
         List<LocalDate> collect = deadline.stream()
                 .filter(task -> task.getDeadline().isAfter(LocalDate.now()))
                 .map(task -> task.getDeadline())
-
                 .collect(Collectors.toList());
-
-
         System.out.println(collect);
-
-
     }
 }
