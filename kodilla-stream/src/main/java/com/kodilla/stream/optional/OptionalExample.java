@@ -11,7 +11,5 @@ public class OptionalExample {
         Optional<User> optionalUser = Optional.ofNullable(user);
 
         optionalUser.ifPresent(u -> System.out.println(u.getUsername()));
-
-
     }
 }
