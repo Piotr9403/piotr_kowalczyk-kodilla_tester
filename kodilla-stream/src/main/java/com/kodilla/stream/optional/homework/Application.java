@@ -17,12 +17,13 @@ public class Application {
 
         for (Student students : studentList) {
             Teacher teacher = Optional.ofNullable(students.getTeacher()).orElse(new Teacher("undefined"));
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(students.teacher);
-            optionalTeacher.ifPresentOrElse(
-                    u -> System.out.println("Student: " + students.getName() + "Teacher: " +
-                            teacher.getName()),
-                    () -> System.out.println("Student: " + students.getName() + "Teacher: " +
-                            teacher.getName()));
+            System.out.println("student: " + students.getName() + "teacher: " + teacher.getName());
+//            Optional<Teacher> optionalTeacher = Optional.ofNullable(students.teacher);
+//            optionalTeacher.ifPresentOrElse(
+//                    u -> System.out.println("Student: " + students.getName() + "Teacher: " +
+//                            teacher.getName()),
+//                    () -> System.out.println("Student: " + students.getName() + "Teacher: " +
+//                            teacher.getName()));
         }
     }
 }
