@@ -1,6 +1,5 @@
 package com.kodilla.stream.homework;
 
-import com.kodilla.stream.user.User;
 import com.kodilla.stream.user.UsersRepository;
 
 public class ForumStats {
@@ -12,7 +11,6 @@ public class ForumStats {
                 .average()
                 .getAsDouble();
 
-
         System.out.println("Średnia postów powyżej 40 roku życia: " + avgPostsAbove40);
 
         double avgPostsbelow40 = UsersRepository.getUsersList()
@@ -21,7 +19,6 @@ public class ForumStats {
                 .mapToInt(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
-
 
         System.out.println("Średnia postów poniżej 40 roku życia: " + avgPostsbelow40);
     }
