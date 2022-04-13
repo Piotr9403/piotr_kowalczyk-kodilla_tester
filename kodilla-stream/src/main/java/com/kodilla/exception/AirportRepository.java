@@ -9,7 +9,7 @@ public class AirportRepository {
         airports.put("Miami", true);
         airports.put("Malta", true);
         airports.put("LasPalmas", false);
-        airports.put("Warsaw", false);
+        airports.put("Warsaw", true);
         return airports;
     }
     public  boolean isAirportInUse(String airport) throws AirportNotFoundException {
