@@ -11,19 +11,23 @@ class WarehouseAppTestSuite {
         //given
         Warehouse warehouse = new Warehouse();
         //when
-        Warehouse.addOrder(new Order("2"));
-        Warehouse.getOrder("2");
+        Warehouse.addOrder(new Order("5"));
+        Warehouse.getOrder("5");
         //then
-        Order expectedOrder = new Order("2");
-        assertEquals(expectedOrder.getNumber(), Warehouse.getOrder("2").getNumber());
+        Order expectedOrder = new Order("5");
+        assertEquals(expectedOrder.getNumber(), Warehouse.getOrder("5").getNumber());
+
     }
 
     @Test
-    public void testGetOrder_withException(){
+    public void testGetOrder_withException() throws OrderDoesntExistException {
         //given
         Warehouse warehouse = new Warehouse();
         //when
+        Warehouse.addOrder(new Order("5"));
+        Warehouse.getOrder("5");
         //then
-        assertThrows(OrderDoesntExistException.class, () -> Warehouse.getOrder("7"));
+        assertThrows(OrderDoesntExistException.class, () -> Warehouse.getOrder("6"));
     }
+
 }
