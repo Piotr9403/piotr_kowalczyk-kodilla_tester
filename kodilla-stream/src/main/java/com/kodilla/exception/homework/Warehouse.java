@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Warehouse {
 
-    static List<Order> orders = new ArrayList<>();
+    List<Order> orders = new ArrayList<>();
 
     public List<Order> getOrderList() {
         return orders;
     }
 
-    public static void addOrder(Order order) {
+    public void addOrder(Order order) {
         orders.add(order);
     }
 
-    public static Order getOrder(String number) throws OrderDoesntExistException {
+    public Order getOrder(String number) throws OrderDoesntExistException {
 
         Order orderNumber = orders.stream()
                 .filter(n -> n.getNumber().equals(number))
