@@ -11,11 +11,11 @@ class WarehouseAppTestSuite {
         //given
         Warehouse warehouse = new Warehouse();
         //when
-        Warehouse.addOrder(new Order("5"));
-        Warehouse.getOrder("5");
+        warehouse.addOrder(new Order("5"));
+        warehouse.getOrder("5");
         //then
         Order expectedOrder = new Order("5");
-        assertEquals(expectedOrder.getNumber(), Warehouse.getOrder("5").getNumber());
+        assertEquals(expectedOrder.getNumber(), warehouse.getOrder("5").getNumber());
 
     }
 
@@ -24,10 +24,22 @@ class WarehouseAppTestSuite {
         //given
         Warehouse warehouse = new Warehouse();
         //when
-        Warehouse.addOrder(new Order("5"));
-        Warehouse.getOrder("5");
+        warehouse.addOrder(new Order("5"));
+        warehouse.getOrder("5");
         //then
-        assertThrows(OrderDoesntExistException.class, () -> Warehouse.getOrder("6"));
+        assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("6"));
     }
 
+    @Test
+    public void testGetOrder_2() throws OrderDoesntExistException {
+        //given
+        Warehouse warehouse = new Warehouse();
+        //when
+        warehouse.addOrder(new Order("6"));
+        warehouse.getOrder("6");
+        //then
+        Order expectedOrder = new Order("5");
+        assertNotEquals(expectedOrder.getNumber(), warehouse.getOrder("6").getNumber());
+
+    }
 }
