@@ -42,7 +42,7 @@ class UserValidatorTestSuite {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"kowalczyk.piotrgmail.com", "piotrwp.pl" , "email@pl"})
+    @ValueSource(strings = {"kowalczyk.piotrgmail.com", "piotrwp.pl" , "e344&*@pl"})
     public void shouldReturnFalseIfEmailNotMeetingTheRequirements(String email) {
         boolean result = userValidator.validateEmail(email);
         assertFalse(result);
