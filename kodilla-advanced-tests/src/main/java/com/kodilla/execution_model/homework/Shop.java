@@ -10,45 +10,30 @@ import java.util.stream.Collectors;
 public class Shop {
 
     //Dodanie nowego zamówienia
-    Set<Order> orderList = new HashSet<>();
+    private final Set<Order> orderList = new HashSet<>();
 
     public void addOrder(Order order) {
-        this.orderList.add(order);
+        orderList.add(order);
     }
 
     //Zwrócenie listy z zakresu dwóch dat
     public List<Order> getOrderListBasedOnTheRangeOfTwoDates(LocalDate firstDate, LocalDate secondDate) {
 
-        List<Order> twoDatesList = orderList
+        return orderList
                 .stream()
                 .filter(o -> o.getDateOfIssue().isAfter(firstDate))
                 .filter(on -> on.getDateOfIssue().isBefore(secondDate))
-                .collect(Collectors.toList());
-        if (twoDatesList.isEmpty())
-            return orderList
-                    .stream()
-                    .filter(o -> o.getDateOfIssue().isAfter(firstDate))
-                    .filter(on -> on.getDateOfIssue().isBefore(secondDate))
-                    .collect(Collectors.toList());
-        return null;
-
+                .toList();
     }
-
 
     //pobranie zamówień na podstawie przekazanego zakresu
     public List<Order> getOrderListBasedOnTheMinAndMaxValue(double minValue, double maxValue) {
-        if (minValue > maxValue) {
-            return null;
-        } else if (minValue == maxValue);
-        List<Order> twoValuesList = orderList
+
+        return orderList
                 .stream()
                 .filter(r -> r.getValue() >= minValue)
                 .filter(or -> or.getValue() <= maxValue)
-                .collect(Collectors.toList());
-        if (twoValuesList.isEmpty()) {
-            return null;
-        }
-        return twoValuesList;
+                .toList();
     }
 
 
@@ -59,18 +44,30 @@ public class Shop {
 
     //zsumowanie wartości wszystkich zamówień.
     public double sumOrders() {
-        if (orderList.size() == 0) {
-            return 0;
-        }
-        double sum = 0;
-        for (Order order : this.orderList) {
-            sum += order.getValue();
-        }
-        return sum;
+        return orderList
+                .stream()
+                .mapToDouble(Order::getValue)
+                .sum();
+    }
+//        double sum = 0;
+//        for (Order order : this.orderList) {
+//            sum += order.getValue();
+//        }
+//        return sum;
+
+    public Set<String> getAllUsers(){
+        return orderList
+                .stream()
+                .map(Order::getLogin)
+                .collect(Collectors.toSet());
     }
 
     //Wyczyszczenie listy
     public void clear() {
         this.orderList.clear();
+    }
+
+    public Set<Order> getOrderList() {
+        return orderList;
     }
 }
