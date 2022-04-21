@@ -1,4 +1,4 @@
-package com.kodilla.execution_model.mockito.homework;
+package com.kodilla.mockito.homework;
 
 import java.util.*;
 

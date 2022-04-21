@@ -1,10 +1,9 @@
 package com.kodilla.execution_model.mockito;
 
+import com.kodilla.mockito.MobilePhone;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MobilePhoneTestSuite {
 

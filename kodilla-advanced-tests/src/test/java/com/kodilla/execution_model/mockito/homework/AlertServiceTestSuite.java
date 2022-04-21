@@ -1,6 +1,10 @@
 package com.kodilla.execution_model.mockito.homework;
 
 
+import com.kodilla.mockito.homework.AlertService;
+import com.kodilla.mockito.homework.Location;
+import com.kodilla.mockito.homework.Person;
+import com.kodilla.mockito.homework.WeatherNotification;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

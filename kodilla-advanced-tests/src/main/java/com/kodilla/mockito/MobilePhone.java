@@ -1,4 +1,4 @@
-package com.kodilla.execution_model.mockito;
+package com.kodilla.mockito;
 
 public interface MobilePhone {
 

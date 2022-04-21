@@ -1,4 +1,4 @@
-package com.kodilla.execution_model.mockito.notification;
+package com.kodilla.mockito.notification;
 
 public interface Client {
 

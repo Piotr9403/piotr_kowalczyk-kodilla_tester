@@ -1,8 +1,8 @@
 package com.kodilla.execution_model.mockito;
 
-import com.kodilla.execution_model.mockito.notification.Client;
-import com.kodilla.execution_model.mockito.notification.Notification;
-import com.kodilla.execution_model.mockito.notification.NotificationService;
+import com.kodilla.mockito.notification.Client;
+import com.kodilla.mockito.notification.Notification;
+import com.kodilla.mockito.notification.NotificationService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
