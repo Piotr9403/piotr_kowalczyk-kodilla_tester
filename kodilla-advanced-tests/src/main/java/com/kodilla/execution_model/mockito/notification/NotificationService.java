@@ -1,9 +1,6 @@
 package com.kodilla.execution_model.mockito.notification;
 
-
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class NotificationService {
