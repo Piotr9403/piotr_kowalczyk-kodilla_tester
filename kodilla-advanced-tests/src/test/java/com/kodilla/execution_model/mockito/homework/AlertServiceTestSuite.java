@@ -34,11 +34,11 @@ class AlertServiceTestSuite {
     }
 
     @BeforeEach
-    void setup(){
+    void setup() {
         notifierMock = mock(Notifier.class);
         weatherAlert = new AlertService(notifierMock);
 
-        Location chicago = new Location("Cicago");
+        Location chicago = new Location("Chicago");
         Location miami = new Location("Miami");
         Location orlando = new Location("Orlando");
 
@@ -52,7 +52,7 @@ class AlertServiceTestSuite {
         weatherAlert.addSubscriber(john, chicago);
         weatherAlert.addSubscriber(john, miami);
         weatherAlert.addSubscriber(jessica, miami);
-        weatherAlert.addSubscriber(walter , orlando);
+        weatherAlert.addSubscriber(walter, orlando);
     }
 
 
@@ -64,32 +64,79 @@ class AlertServiceTestSuite {
         verify(notifierMock, times(3)).notify(any(), any());
     }
 
+    @Test
+    void shouldSendNotificationsToLocation() {
+        //when
+        weatherAlert.sendNotificationToLocation(new Location("Miami"), "Test alert");
+        //then
+        verify(notifierMock, times(1)).notify(new Person("John"), "Test alert");
+        verify(notifierMock, times(1)).notify(new Person("Jessica"), "Test alert");
+        verify(notifierMock, times(0)).notify(new Person("Walter"), "Test alert");
+    }
 
     @Test
     void shouldRemoveSubscriberFromAllLocations() {
         //when
-        weatherAlert.removeSubscriberFromAllLocations();
+        weatherAlert.removeSubscriberFromAllLocations(new Person("John"));
         //then
-        verify(notifierMock, times(3)).notify(any(), any());
+        Assertions.assertTrue(weatherAlert.getLocations()
+                .values()
+                .stream()
+                .flatMap(c -> c.stream())
+                .filter(p -> p.equals(new Person("John")))
+                .findAny()
+                .isEmpty());
     }
 
-//    @Test
-//    void shouldRemoveSubscriberFromLocation() {
-//        //when
-//        weatherAlert.removeSubscriberFromLocation();
-//        //then
-//        verify();
-//    }
+    @Test
+    void shouldRemoveSubscriberFromLocation() {
+        //when
+        weatherAlert.removeSubscriberFromLocation(new Person("John"), new Location("Miami"));
+        //then
+        Assertions.assertEquals(1,weatherAlert.getLocations()
+                .values()
+                .stream()
+                .flatMap(c -> c.stream())
+                .filter(p -> p.equals(new Person("John")))
+                .count());
+    }
 
-//    @Test
-//    void shouldRemovelocation() {
-//        //when
-//        weatherAlert.removeLocation();
-//        //then
-//
-//    }
+    @Test
+    void shouldAddSubscriberAndLocation() {
+        //given
+        Person chris = new Person("Chris");
+        Location paloALto = new Location("Palo ALto");
+        //when
+        weatherAlert.addLocation(paloALto);
+        weatherAlert.addSubscriber(chris,paloALto);
+        //then
+        Assertions.assertEquals(1,weatherAlert.getLocations()
+                .keySet()
+                .stream()
+                .filter(l -> l.equals(paloALto))
+                .count());
+        Assertions.assertEquals(1,weatherAlert.getLocations()
+                .values()
+                .stream()
+                .flatMap(c -> c.stream())
+                .filter(p -> p.equals(chris))
+                .count());
+    }
 
+    @Test
+    void shouldRemoveLocation() {
+        //given
+        Location paloALto = new Location("Palo ALto");
+        weatherAlert.addLocation(paloALto);
+        //when
+        weatherAlert.removeLocation( paloALto);
+        //then
+        Assertions.assertEquals(0,weatherAlert.getLocations()
+                .keySet()
+                .stream()
+                .filter(l -> l.equals(paloALto))
+                .count());
 
-
+    }
 
 }
