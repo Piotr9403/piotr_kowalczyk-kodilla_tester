@@ -13,7 +13,7 @@ class CalculatorTestSuite {
 
     @Test
     public void shouldReturnResultOfSummation() {
-        Double summation = bean.add(2.35,4.89);
+        Double summation = bean.add(3.35,3.89);
         assertEquals(7.24, summation, 0.01);
     }
 

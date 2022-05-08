@@ -2,6 +2,7 @@ package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
 import org.springframework.stereotype.Component;
 
+//wstrzykiwanie beana
 @Component
 public class Calculator {
 
