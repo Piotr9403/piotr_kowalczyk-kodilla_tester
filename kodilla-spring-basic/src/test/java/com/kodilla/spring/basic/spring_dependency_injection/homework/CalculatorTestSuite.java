@@ -34,5 +34,4 @@ class CalculatorTestSuite {
         Double division = bean.divide(2.35,4.89);
         assertEquals(0.48, division, 0.01);
     }
-
 }
