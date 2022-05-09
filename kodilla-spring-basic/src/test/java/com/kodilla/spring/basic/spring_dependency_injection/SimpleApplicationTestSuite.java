@@ -11,7 +11,7 @@ public class SimpleApplicationTestSuite {
 
     @Test
     public void shouldReturnCorrectMessage() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic"); // [1]
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
         SkypeMessageService bean = context.getBean(SkypeMessageService.class);
         String message = bean.send("Test", "Any receiver");
         Assertions.assertNotNull(message);
