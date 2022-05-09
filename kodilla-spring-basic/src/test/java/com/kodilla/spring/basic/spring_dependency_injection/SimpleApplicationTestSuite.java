@@ -6,10 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-class SimpleApplicationTestSuite {
+public class SimpleApplicationTestSuite {
 
     @Test
     public void shouldReturnCorrectMessage() {
@@ -26,7 +24,4 @@ class SimpleApplicationTestSuite {
         String message = bean.processMessage("Test", "Any receiver");
         Assertions.assertEquals("Sending [Test] to: Any receiver using Skype", message);
     }
-
-
-
 }
