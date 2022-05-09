@@ -1,18 +1,19 @@
 package com.kodilla.spring.basic.dependency_injection;
 
-public class SimpleApplication {
-    //private MessageService messageService = new MessageService();
-    private MessageService messageService;
+import org.springframework.stereotype.Component;
+import javax.annotation.Resource;
 
-    public SimpleApplication(MessageService messageService) {
-        this.messageService = messageService;
-    }
+@Component
+public class SimpleApplication {
+
+    @Resource(name = "skypeMessageService")
+    private MessageService messageService;
 
     public String processMessage(String message, String receiver) {
         if (checkReceiver(receiver)) {
-            this.messageService.send(message, receiver);
+            return this.messageService.send(message, receiver);
         }
-        return message;
+        return null;
     }
 
     private boolean checkReceiver(String receiver) {

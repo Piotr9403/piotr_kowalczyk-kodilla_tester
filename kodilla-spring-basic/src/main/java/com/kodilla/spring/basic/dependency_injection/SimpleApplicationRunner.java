@@ -1,3 +1,4 @@
+/*
 package com.kodilla.spring.basic.dependency_injection;
 
 public class SimpleApplicationRunner {
@@ -7,3 +8,5 @@ public class SimpleApplicationRunner {
         application.processMessage("Test message", "receiver@mail.com");
     }
 }
+
+ */
