@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 @Component
-public class SimpleApplication {
+public class SimpleApplication2 {
 
     @Resource(name = "skypeMessageService")
     private MessageService messageService;

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Primary
 @Component
-public class SkypeMessageService implements MessageService {
+public class SkypeMessageService2 implements MessageService {
 
     public String send(String message, String receiver) {
         return "Sending [" + message + "] to: " + receiver + " using Skype";
