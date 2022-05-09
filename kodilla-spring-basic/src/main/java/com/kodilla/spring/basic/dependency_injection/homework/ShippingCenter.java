@@ -1,6 +1,7 @@
 package com.kodilla.spring.basic.dependency_injection.homework;
 
 public class ShippingCenter {
+
     private DeliveryService deliveryService = new DeliveryService();
     private NotificationService notificationService = new NotificationService();
 
