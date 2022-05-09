@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ShippingCenter {
 
+    @Autowired
     private DeliveryService deliveryService;
+    @Autowired
     private NotificationService notificationService;
 
     public ShippingCenter(DeliveryService deliveryService, NotificationService notificationService) {
