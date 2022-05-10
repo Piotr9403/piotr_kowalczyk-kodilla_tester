@@ -3,28 +3,25 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDate;
+
 @Configuration
 public class CarApplication {
 
     @Bean
-    public String season() {
-        return "winter";
-    }
-
-    @Bean
-    public Car chooseCar(String season) {
-        String spring = "spring";
-        String winter = "winter";
-        String autumn = "autumn";
-
+    public Car chooseCar() {
         Car car;
-        if (season == spring || season == autumn) {
-            car = new Sedan();
-        } else if (season == winter) {
+        LocalDate date = LocalDate.now();
+
+        if (date.getMonthValue() == 12 || date.getMonthValue() == 1 || date.getMonthValue() == 2) {
             car = new Suv();
-        } else {
+        } else if (date.getMonthValue() == 6 || date.getMonthValue() == 7 || date.getMonthValue() == 8) {
             car = new Cabrio();
+        } else {
+            car = new Sedan();
+
         }
+
         return car;
     }
 }

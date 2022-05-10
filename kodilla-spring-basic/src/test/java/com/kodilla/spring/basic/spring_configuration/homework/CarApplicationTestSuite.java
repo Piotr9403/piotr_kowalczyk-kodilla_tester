@@ -6,41 +6,28 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
 
 @SpringBootTest
 public class CarApplicationTestSuite {
 
     @Test
-    public void shouldReturnCarTypeAccordingToWinter() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+
+    public void shouldPickCar() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Car car = (Car) context.getBean("chooseCar");
-        String type = car.getCarType("winter");
-        Assertions.assertEquals("SUV", type);
+        String type = car.getCarType();
+        System.out.println(type);
+        List<String> possibleTypes = Arrays.asList("Suv", "Cabrio", "Sedan");
+        Assertions.assertTrue(possibleTypes.contains(type));
     }
 
     @Test
-    public void shouldReturnCarTypeAccordingToSummer() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+    public void shouldHaveLightsOnOrOff() {
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Car car = (Car) context.getBean("chooseCar");
-        String type = car.getCarType("winter");
-        Assertions.assertNotEquals("Sedan", type);
-    }
-
-
-    @Test
-    public void shouldTurnLightsOffBetween6And20() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
-        Suv suv = (Suv) context.getBean(Suv.class);
-        Boolean result = suv.hasHeadlightsTurnedOn(LocalTime.of(19, 59));
-        Assertions.assertEquals(false, result);
-    }
-
-    @Test
-    public void shouldTurnLightsOnBetween20And6() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
-        Suv suv = (Suv) context.getBean(Suv.class);
-        Boolean result = suv.hasHeadlightsTurnedOn(LocalTime.of(5, 59));
-        Assertions.assertEquals(true, result);
+        boolean result = car.hasHeadlightsTurnedOn();
+        Assertions.assertFalse(result);
     }
 }

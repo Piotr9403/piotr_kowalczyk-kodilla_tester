@@ -4,19 +4,16 @@ import java.time.LocalTime;
 
 public class Cabrio implements Car {
 
-    LocalTime start = LocalTime.of(6, 00);
-    LocalTime end = LocalTime.of(20,00);
-
     @Override
-    public boolean hasHeadlightsTurnedOn(LocalTime time) {
-        if (time.isAfter(start) && time.isBefore(end)) {
-            return false;
-        }
+    public boolean hasHeadlightsTurnedOn() {
+        LocalTime now = LocalTime.now();
+        if (now.isBefore(LocalTime.of(20,0)) && now.isAfter(LocalTime.of(6,0))) {
+            return false; }
         return true;
     }
 
     @Override
-    public String getCarType(String season) {
+    public String getCarType() {
         return "Cabrio";
     }
 }
