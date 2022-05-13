@@ -23,11 +23,11 @@ public class CarApplicationTestSuite {
         Assertions.assertTrue(possibleTypes.contains(type));
     }
 
-    @Test
-    public void shouldHaveLightsOnOrOff() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Car car = (Car) context.getBean("chooseCar");
-        boolean result = car.hasHeadlightsTurnedOn();
-        Assertions.assertFalse(result);
-    }
+//    @Test
+//    public void shouldHaveLightsOnOrOff() {
+//        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+//        Car car = (Car) context.getBean("chooseCar");
+//        boolean result = car.hasHeadlightsTurnedOn();
+//        Assertions.assertFalse(result);
+//    }
 }
