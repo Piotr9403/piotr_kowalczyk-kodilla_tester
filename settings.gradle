@@ -10,4 +10,5 @@ include 'kodilla-spring-basic'
 include 'kodilla-rest-api'
 include 'kodilla-selenium'
 include 'kodilla-google-selenium'
+include 'kodilla-cucumber'
 
