@@ -23,7 +23,7 @@ public class Shop {
                 .stream()
                 .filter(o -> o.getDateOfIssue().isAfter(firstDate))
                 .filter(on -> on.getDateOfIssue().isBefore(secondDate))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     //pobranie zamówień na podstawie przekazanego zakresu
@@ -33,7 +33,7 @@ public class Shop {
                 .stream()
                 .filter(r -> r.getValue() >= minValue)
                 .filter(or -> or.getValue() <= maxValue)
-                .toList();
+                .collect(Collectors.toList());
     }
 
 
